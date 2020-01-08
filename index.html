@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Unsupported Browser</title>
+    <style type="text/css">
+        * { box-sizing: border-box; }
+        html {
+            font-family: system-ui, sans-serif, Helvetica, Arial, "Open Sans";
+        }
+        body {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 0 16px 120px;
+        }
+        .has-platform .platform-help,
+        .has-platform .platform h3 {
+            display: none;
+        }
+        .browser-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            width: 100%;
+            justify-content: center;
+        }
+        .browser-list__item {
+            margin: 16px 8px;
+            padding: 0;
+            width: 120px;
+            display: inline-block;
+        }
+        .browser-list__item--recommended {
+            transform: scale(1.2);
+            margin: 16px 16px;
+            width: 132px;
+        }
+        .browser {
+            border: 1px solid grey;
+            border-radius: 4px;
+            padding: 8px;
+            text-align: center;
+        }
+        .browser:hover {
+            box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
+        }
+        .browser__link {
+            width: 100%;
+            height: 100%;
+            display: block;
+            text-decoration: none;
+            color: black;
+            display: flex;
+            flex-direction: column;
+        }
+        .browser__link:hover {
+            color: darkblue;
+        }
+        .browser__recommended {
+            color: #64ae2f;
+            font-weight: bold;
+            font-size: 12px;
+            text-transform: uppercase;
+            text-align: center;
+            display: block;
+            margin: 0px 0px 8px;
+        }
+        .browser__image {
+            display: block;
+            width: auto;
+            margin: 0 auto;
+        }
+        .browser__name {
+            display: block;
+            font-size: 16px;
+            line-height: 24px;
+            margin-top: 16px;
+            margin-bottom: auto;
+        }
+        .browser__download {
+            margin-top: 16px;
+        }
+        .button {
+            box-shadow: inset 0px 1px 0px 0px #81c347;
+            background: #64ae2f;
+            background: linear-gradient(to bottom, #6eb537 5%, #64ae2f 100%);
+            border: 1px solid #51a120;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            position: relative;
+        }
+        .button:hover {
+            background: #51a120;
+            background: linear-gradient(to bottom, #64ae2f 5%, #51a120 100%);
+        }
+        .button:active {
+            top: 1px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Unsupported Browser</h1>
+    <p>You arrived at this website because your browser is unsupported<span id="by"></span>.</p>
+    <h2>What Is A &ldquo;Browser&rdquo;?</h2>
+    <p>A &ldquo;browser,&rdquo; or &ldquo;<a href="https://simple.wikipedia.org/wiki/Web_browser" target="_blank">web browser</a>,&rdquo; is an app on your computer, phone, or tablet that lets you visit websites and use web applications.</p>
+    <h2>Why Is My Browser Unsupported?</h2>
+    <p>Like many apps, browsers need to be updated. New versions are released all the time. Newer versions of a browser will be safer, more secure, and have more features. Plus, many websites and web applications stop supporting browsers when they get too old.</p>
+    <h2>Where Can I Download A Supported Browser?</h2>
+    <p class="platform-help">This depends on what kind of computer, phone, or tablet you have.</p>
+    <div class="platform" id="ios">
+        <h3>iPhone &amp; iPad</h3>
+        <ul class="browser-list">
+            <li class="browser-list__item browser browser--safari">
+                <a class="browser__link" href="https://apple.com/safari">
+                    <img class="browser__image" src="./apple-safari.svg" alt="Safari Logo" height="96">
+                    <span class="browser__name">Apple Safari</span>
+                    <span class="browser__download button">Download</span>
+                </a>
+            </li>
+            <li class="browser-list__item browser browser-list__item--recommended browser--firefox-mobile">
+                <a class="browser__link" href="https://mozilla.org/firefox/mobile">
+                    <span class="browser__recommended">Recommended!</span>
+                    <img class="browser__image" src="./mozilla-firefox.svg" alt="Firefox Logo" height="96">
+                    <span class="browser__name">Mozilla Firefox</span>
+                    <span class="browser__download button">Download</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="platform" id="android">
+        <h3>Android Phone or Tablet</h3>
+        <ul class="browser-list">
+            <li class="browser-list__item browser browser--chrome-android">
+                <a class="browser__link" href="https://play.google.com/store/apps/details?id=com.android.chrome&hl=en_US">
+                    <img class="browser__image" src="./google-chrome.svg" alt="Chrome Logo" height="96">
+                    <span class="browser__name">Google Chrome</span>
+                    <span class="browser__download button">Download</span>
+                </a>
+            </li>
+            <li class="browser-list__item browser browser-list__item--recommended browser--firefox-mobile">
+                <a class="browser__link" href="https://mozilla.org/firefox/mobile">
+                    <span class="browser__recommended">Recommended!</span>
+                    <img class="browser__image" src="./mozilla-firefox.svg" alt="Firefox Logo" height="96">
+                    <span class="browser__name">Mozilla Firefox</span>
+                    <span class="browser__download button">Download</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="platform" id="windows">
+        <h3>Windows PC</h3>
+        <ul class="browser-list">
+            <li class="browser-list__item browser browser--edge">
+                <a class="browser__link" href="https://microsoft.com/edge">
+                    <img class="browser__image" src="./ms-edge.svg" alt="Edge Logo" height="96">
+                    <span class="browser__name">Microsoft Edge</span>
+                    <span class="browser__download button">Download</span>
+                </a>
+            </li>
+            <li class="browser-list__item browser browser-list__item--recommended browser--firefox">
+                <a class="browser__link" href="https://mozilla.org/firefox/download">
+                    <span class="browser__recommended">Recommended!</span>
+                    <img class="browser__image" src="./mozilla-firefox.svg" alt="Firefox Logo" height="96">
+                    <span class="browser__name">Mozilla Firefox</span>
+                    <span class="browser__download button">Download</span>
+                </a>
+            </li>
+            <li class="browser-list__item browser browser--chrome">
+                <a class="browser__link" href="https://google.com/chrome">
+                    <img class="browser__image" src="./google-chrome.svg" alt="Chrome Logo" height="96">
+                    <span class="browser__name">Google Chrome</span>
+                    <span class="browser__download button">Download</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="platform" id="mac">
+        <h3>Mac</h3>
+        <ul class="browser-list">
+            <li class="browser-list__item browser browser--safari">
+                <a class="browser__link" href="https://apple.com/safari">
+                    <img class="browser__image" src="./apple-safari.svg" alt="Safari Logo" height="96">
+                    <span class="browser__name">Apple Safari</span>
+                    <span class="browser__download button">Download</span>
+                </a>
+            </li>
+            <li class="browser-list__item browser browser-list__item--recommended browser--firefox">
+                <a class="browser__link" href="https://mozilla.org/firefox/download">
+                    <span class="browser__recommended">Recommended!</span>
+                    <img class="browser__image" src="./mozilla-firefox.svg" alt="Firefox Logo" height="96">
+                    <span class="browser__name">Mozilla Firefox</span>
+                    <span class="browser__download button">Download</span>
+                </a>
+            </li>
+            <li class="browser-list__item browser browser--chrome">
+                <a class="browser__link" href="https://google.com/chrome">
+                    <img class="browser__image" src="./google-chrome.svg" alt="Chrome Logo" height="96">
+                    <span class="browser__name">Google Chrome</span>
+                    <span class="browser__download button">Download</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="platform" id="linux">
+        <h3>Linux PC</h3>
+        <ul class="browser-list">
+            <li class="browser-list__item browser browser-list__item--recommended browser--firefox">
+                <a class="browser__link" href="https://mozilla.org/firefox/download">
+                    <span class="browser__recommended">Recommended!</span>
+                    <img class="browser__image" src="./mozilla-firefox.svg" alt="Firefox Logo" height="96">
+                    <span class="browser__name">Mozilla Firefox</span>
+                    <span class="browser__download button">Download</span>
+                </a>
+            </li>
+            <li class="browser-list__item browser browser--chromium">
+                <a class="browser__link" href="https://www.chromium.org/getting-involved/download-chromium">
+                    <img class="browser__image" src="./chromium.svg" alt="Chromium Logo" height="96">
+                    <span class="browser__name">Chromium</span>
+                    <span class="browser__download button">Download</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <script type="text/javascript">
+        function getUrlParameter(name) {
+            // https://davidwalsh.name/query-string-javascript
+            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            var results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        };
+        function autorun() {
+            var by = getUrlParameter('by');
+            if (by) {
+                document.getElementById('by').innerText = ' by ' + by;
+            }
+
+            var hide = getUrlParameter('hide');
+            if (hide) {
+                var names = hide.split(',');
+                for (var i = 0; i < names.length; i++) {
+                    var browsers = document.getElementsByClassName('browser');
+                    for (var j = 0; j < browsers.length; j++) {
+                        if (browsers[j] && (new RegExp(names[i])).test(browsers[j].className)) {
+                            browsers[j].style.display = 'none';
+                        }
+                    }
+                }
+            }
+
+            var platform;
+            if (navigator.platform && /ipad|iphone|ipod/i.test(navigator.platform)) { platform = 'ios'; }
+            else if (/android/i.test(navigator.userAgent)) { platform = 'android'; }
+            else if (/windows nt/i.test(navigator.userAgent)) { platform = 'windows'; }
+            else if (/mac os x/i.test(navigator.userAgent)) { platform = 'mac'; }
+            else if (/linux/i.test(navigator.userAgent)) { platform = 'linux'; }
+            else { platform = null; }
+            if (platform && getUrlParameter('platform') !== 'all') {
+                document.body.className += ' has-platform';
+                var platforms = document.getElementsByClassName('platform');
+                for (var i = 0; i < platforms.length; i++) {
+                    if (platforms[i].id === platform) { continue; }
+                    platforms[i].style.display = 'none';
+                }
+            }
+        }
+        if (document.addEventListener) document.addEventListener("DOMContentLoaded", autorun, false);
+        else if (document.attachEvent) document.attachEvent("onreadystatechange", autorun);
+        else window.onload = autorun;
+    </script>
+</body>
+
+</html>
